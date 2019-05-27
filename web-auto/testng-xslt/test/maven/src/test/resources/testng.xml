@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite1">
+
+    <test name="TestCase1">
+        <packages>
+            <package name="org.testng.xslt.test.*"/>
+        </packages>
+    </test>
+
+    <test name="Some other tests case">
+        <packages>
+            <package name="org.testng.xslt.test.*"/>
+        </packages>
+    </test>
+
+    <test name="Another test case">
+        <packages>
+            <package name="org.testng.xslt.test.*"/>
+        </packages>
+    </test>
+
+</suite>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<parames>
+		<!--current_residential_address:当前住宅地址,customer_classify:客户分类,as_same:户籍与现居住地是否一致 ,credit_sesame:芝麻信用分,alipayNo:支付宝帐号,wechatNo：微信号-->
+
+	<case1 name ="门店录入">
+		<testData>{
+				   "apply_info":{"loan_money":"50000","customer_classify":"新客户","account_manager":"皇皇皇"},
+				   "persion_info":{"marry":"已婚","child_no":"0","support_no":"2","monthly_expenses":"5000","as_same":"是","credit_sesame":"700","alipayNo":"zhifubao_@11","wechatNo":"weixinhao11"},
+		           "car_info":{"transfer_time":"0","license_plate_num":"J8888"},	   
+		           "job_info":{"unit_name":"国企单位","department":"信息技术部","position":"销售","basic_salary":"10000","salary_data":"5","other_income":"1000"},
+				   "remark":{"store_remark":"车贷录入么问题啦车贷录入么问题啦车贷录入么问题啦车贷录入么问题啦车贷录入么问题啦车贷录入么问题啦车贷录入么问题啦车贷录入么问题啦车贷录入么问题啦车贷录入么问题啦车贷录入么问题啦车贷录入么问题啦车贷录入么问题啦车贷录入么问题啦车贷录入么问题啦车贷录入么问题啦"},
+				   "opera":"提交"
+				   }
+		</testData>
+		<checkPoint></checkPoint>
+	</case1>
+
+	<case2 name ="本地评估">
+		<testData>{
+		           "car_info":{"mileage":"1000","violation_summary":"1","sum_fraction":"3","violation_summary_money":"100","x_twelve_points":"1"},	   
+					"evaluate_report":{"nuclear_carriers_num":"4","actualRun":"1000","custom_estimate":"false"}
+					}
+		</testData>
+		<checkPoint></checkPoint>
+	</case2>
+	<case2-1 name ="本地评估-车300估价逻辑">
+		<testData>{
+		           "car_info":{"mileage":"1000","violation_summary":"1","sum_fraction":"3","violation_summary_money":"100","x_twelve_points":"1"},
+					"evaluate_report":{"nuclear_carriers_num":"4","actualRun":"1000","custom_estimate":"9000000"}
+					}
+		</testData>
+		<checkPoint>{"prompt_info":"请拉取车300估价","prompt_info1":"本地评估价必须小于车300估价"}</checkPoint>
+	</case2-1>
+
+	<case3 name ="总部评估">
+		<testData>{
+					"data":{"back_node":"go_back_node_local","main_reason":"main_reason_img_error","sub_reason":"sub_reason_lost_img","remark":"回退到本地评估了",
+							"other_node":"local_evaluate", "other_iframe":"car_iframe_112111","other_node_info":"本地评估",
+							"current_node":"headquarters_evaluate","current_iframe":"car_iframe_112109"}
+					}
+		</testData>
+		<checkPoint></checkPoint>
+	</case3>
+	
+	<case4 name ="初审">
+		<testData>{
+					"data":{"trialMoney":"50000","first_approval_comments":"初审没问题了,可以提交走了！"}
+					}
+		</testData>
+		<checkPoint></checkPoint>
+	</case4>
+	<case4-1 name ="初审拒绝">
+		<testData>{
+					"data":{"trialMoney":"50000","first_approval_comments":"初审的意见是：要进行拒绝操作"}
+					}
+		</testData>
+		<checkPoint></checkPoint>
+	</case4-1>
+	<case4-2 name ="初审-回退总部评估"><!-- sub_reason 为0 则不需要操作子原因 -->
+		<testData>{
+					"data":{"back_node":"go_back_node_headquarters","main_reason":"main_reason","sub_reason":"0","remark":"回退到总部评估了","trialMoney":"50000","first_approval_comments":"初审意见哟哦哦",
+							"other_node":"headquarters_evaluate", "other_iframe":"car_iframe_112109","other_node_info":"总部评估",
+							"current_node":"first_trial","current_iframe":"car_iframe_112107"}	
+					}
+		</testData>
+		<checkPoint></checkPoint>
+	</case4-2>
+	<case4-3 name ="初审实地调查">
+		<testData>{
+					"data":{"unit_descri":"初审实地调查-单位情况正常,没有问题的", "live_descri":"初审实地调查-居住的情况也是正常的,没有问题的", "house_descri":"初审实地调查-房产证问题也是没有问题的,ok的", "survey_result":"提交",
+							"trialMoney":"50000","first_approval_comments":"初审实地调查结果出来了,没有问题,可以提交走了！"}
+					}
+		</testData>
+		<checkPoint>{"search_result":"共 1 条"}</checkPoint>
+	</case4-3>
+	
+	
+	<case5 name ="终审">
+		<testData>{
+					"data":{"final_approval_comments":"终审没问题了,可以提交走了！","final_approval_reject":"终审拒绝"}
+					}
+		</testData>
+		<checkPoint></checkPoint>
+	</case5>
+	<case5-1 name ="终审-回退初审"><!-- sub_cause 为0 则不需要操作子原因 -->
+		<testData>{
+					"data":{"back_node":"go_back_node_first","main_reason":"main_reason","sub_reason":"0","remark":"回退到初审了","final_approval_comments":"终审意见哟哦哦","trialMoney":"50000","first_approval_comments":"初审回退意见通过了,提交到终审吧",
+							"other_node":"first_trial","other_iframe":"car_iframe_112107", "other_node_info":"初审",
+							"current_node":"finally_trial","current_iframe":"car_iframe_112106"}
+					}
+		</testData>
+		<checkPoint></checkPoint>
+	</case5-1>
+	<case5-2 name ="终审实地调查">
+		<testData>{
+					"data":{"unit_descri":"终审实地调查-单位情况正常,没有问题的", "live_descri":"终审实地调查-居住的情况也是正常的,没有问题的", "house_descri":"终审实地调查-房产证问题也是没有问题的,ok的", "survey_result":"提交",
+							"final_approval_comments":"终审实地调查没问题了,可以提交走了！"}
+					}
+		</testData>
+		<checkPoint>{"search_result":"共 2 条"}</checkPoint>
+	</case5-2>
+	
+	<case6 name ="GPS安装">
+		<testData></testData>
+		<checkPoint></checkPoint>
+	</case6>
+	
+	<case7 name ="门店签约">
+		<testData>{
+					"data":{"trialMoney":"50000","first_approval_comments":"初审没问题了,可以提交走了！","final_approval_comments":"终审没问题了,可以提交走了！","final_approval_reject":"终审拒绝"},
+					"read_card":{"name":"0","idcard":"0","birthday":"0"},
+					"add_bank_card":{"bank_no":"-1"}
+					}
+		</testData>
+		<checkPoint>{"add_bank_sucess":"添加银行卡成功"}</checkPoint>
+	</case7>
+
+	<case8 name ="资料审核">
+		<testData>{
+				   "data":{"main_reason":"main_reason_img_error","sub_reason":"sub_reason_lost_img"}}</testData>
+		<checkPoint></checkPoint>
+	</case8>
+	
+	<case9 name ="合同审核">
+		<testData></testData>
+		<checkPoint></checkPoint>
+	</case9>
+	
+	<case10 name ="更换银行卡">
+		<testData>{
+					"add_bank_card":{"bank_no":"-1"}
+					}
+		</testData>
+		<checkPoint></checkPoint>
+	</case10>
+	
+	<case11 name ="流程监控合同状态查询-已放款">
+		<testData>{
+					"contractStatus":"正常"
+					}
+		</testData>
+		<checkPoint></checkPoint>
+	</case11>
+	
+	<case12 name ="本地评估订单取消">
+		<testData></testData>
+		<checkPoint></checkPoint>
+	</case12>
+	
+	<case13 name ="初审-回退门店录入"><!-- sub_reason 为0 则不需要操作子原因 -->
+		<testData>{
+					"data":{"back_node":"back_node_store_entry","main_reason":"main_reason","sub_reason":"0","remark":"回退到门店录入了","trialMoney":"50000","first_approval_comments":"初审意见哟哦哦",
+							"other_node":"store_entry", "other_iframe":"car_iframe_112101","other_node_info":"门店录入",
+							"current_node":"first_trial","current_iframe":"car_iframe_112107"}	
+					}
+		</testData>
+		<checkPoint></checkPoint>
+	</case13>
+
+	
+</parames>

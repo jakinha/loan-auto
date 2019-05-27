@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="华夏信财" preserve-order="true" parallel="tests" thread-count="1">
+    <listeners>
+        <listener class-name="cn.web.util.MyListener"/>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+    <test name="车贷进件" preserve-order="true">
+        <parameter name="modulesCase" value="车贷进件"/>
+        <classes>
+            <class name="cn.web.cases.carloan.CarLoanWebCases">
+                <methods>
+                    <include name="storeEntry"/>
+                    <include name="localEvaluate"/>
+                    <include name="headquartersEvaluate"/>
+                    <include name="firstTrial"/>
+                    <include name="finallyTrial"/>
+                    <include name="installGPS"/>
+                    <include name="storeSigning"/>
+                    <include name="dataReview"/>
+                    <include name="contractReview"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<mysql>
+<!-- SIT 信 贷 环 境 数 据 库    只有一个环境  -->
+	<mysql_sit>
+		<jdbc_driver>com.mysql.jdbc.Driver</jdbc_driver>
+		<jdbc_url>jdbc:mysql://192.168.11.95:3306/</jdbc_url>
+		<name>root</name>
+		<pwd>yWC^W^vt7ek!EI*9</pwd>
+	</mysql_sit>
+<!-- SIT2 信 贷  环 境 数 据 库     只有一个环境  -->
+	<mysql_sit2>
+		<jdbc_driver>com.mysql.jdbc.Driver</jdbc_driver>
+		<jdbc_url>jdbc:mysql://192.168.15.121:3316/</jdbc_url>
+		<name>hxxc_sa</name>
+		<pwd>hxxc_sa_2017</pwd>
+	</mysql_sit2>
+
+<!-- UAT 信 贷  环 境 数 据 库-->
+	<mysql_credit_203>
+		<driver_name>com.mysql.jdbc.Driver</driver_name>
+		<jdbc_url>jdbc:mysql://192.168.11.203:3306/</jdbc_url>
+		<name>root</name>
+		<pwd>hxxc_rds_2017</pwd>
+	</mysql_credit_203>
+	
+	
+<!-- UAT huaxia_cai_app等  环 境 数 据 库-->	
+	<mysql_huaxia_cai_3315>
+		<driver_name>com.mysql.jdbc.Driver</driver_name>
+		<jdbc_url>jdbc:mysql://192.168.11.203:3315/</jdbc_url>
+		<name>root</name>
+		<pwd>hxxc_rds_2017</pwd>
+	</mysql_huaxia_cai_3315>
+<!-- UAT huaxia_usercenter等  环 境 数 据 库-->	
+	<mysql_usercenter_3310>
+		<driver_name>com.mysql.jdbc.Driver</driver_name>
+		<jdbc_url>jdbc:mysql://192.168.11.203:3310/</jdbc_url>
+		<name>root</name>
+		<pwd>hxxc_rds_2017</pwd>
+	</mysql_usercenter_3310>
+
+	
+<!-- SIT 车 贷 数 据 库 服 务  -->
+	<mysql_carloan_3307>
+		<jdbc_driver>com.mysql.jdbc.Driver</jdbc_driver>
+		<jdbc_url>jdbc:mysql://192.168.11.247:3307/</jdbc_url>
+		<name>hxxc-sa</name>
+		<pwd>ue1HKcmkA7(u</pwd>
+	</mysql_carloan_3307>
+<!-- UAT 车 贷 数 据 库 服 务   -->
+	<mysql_carloan_3308>
+		<jdbc_driver>com.mysql.jdbc.Driver</jdbc_driver>
+		<jdbc_url>jdbc:mysql://192.168.11.247:3308/</jdbc_url>
+		<name>hxxc-sa</name>
+		<pwd>ue1HKcmkA7(u</pwd>
+	</mysql_carloan_3308>
+	
+	
+<!-- UAT 资 金 数 据 库 服 务  -->
+	<mysql_fundsys_3307>
+		<driver_name>com.mysql.jdbc.Driver</driver_name>
+		<jdbc_url>jdbc:mysql://192.168.11.203:3307/</jdbc_url>
+		<name>root</name>
+		<pwd>hxxc_rds_2017</pwd>
+	</mysql_fundsys_3307>
+	
+	
+<!--SIT 征  信  数 据 库 服 务  -->
+	<mysql_credit_3306>
+		<driver_name>com.mysql.jdbc.Driver</driver_name>
+		<jdbc_url>jdbc:mysql://192.168.11.247:3306/</jdbc_url>
+		<name>hxxc-sa</name>
+		<pwd>ue1HKcmkA7(u</pwd>
+	</mysql_credit_3306>
+<!--UAT 征  信  数 据 库 服 务  -->
+	<mysql_credit_3306>
+		<driver_name>com.mysql.jdbc.Driver</driver_name>
+		<jdbc_url>jdbc:mysql://192.168.11.247:3308/</jdbc_url>
+		<name>hxxc-sa</name>
+		<pwd>ue1HKcmkA7(u</pwd>
+	</mysql_credit_3306>
+	
+</mysql>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>				
+<parames>
+	<head></head>
+	
+	<case1 name="获取图形验证码">
+		<url>user/verification-code</url>
+		<parame></parame>
+		<linked>serialNumber=$.body.serialNumber</linked>
+		<checkPoint></checkPoint>
+	</case1>
+	<case2 name ="获取短信码">
+		<url>user/message-code</url>
+		<parame>{"phoneNo":"华夏普惠注册手机","type":"1","serialNumber":"${serialNumber}","verificationCode":"AAAA"}</parame>
+		<linked></linked>
+		<checkPoint></checkPoint>
+	</case2>
+	<case3 name ="注册">
+		<url>user/register</url>
+		<parame>{"phoneNo":"华夏普惠注册手机","password":"123456","msgCode":"111111","picture":"AAAA","serialNumber":"${serialNumber}"}</parame>
+		<linked></linked>
+		<checkPoint></checkPoint>
+	</case3>
+	
+	<case4 name ="登录">
+		<url>user/login</url>
+		<parame>{"phoneNo":"华夏普惠注册手机","password":"123456"}</parame>
+		<linked>userUuid=$.body.userUuid,token=$.body.token,session=$.body.session</linked>
+		<checkPoint></checkPoint>
+	</case4>
+	
+	<case5 name ="实名认证">
+		<url>personageCenter/authRealName</url>
+		<parame>{"name":"信贷入单客户名称","idCard":"信贷入单客户证件号"}</parame>
+		<linked></linked>
+		<checkPoint>$.body.realNameState=true</checkPoint>
+	</case5>
+	
+	<case6 name="用户申请意向">
+		<url>apply/submit-purpose</url>
+		<parame>{"name":"信贷入单客户名称","idCard":"信贷入单客户证件号","phoneNo":"华夏普惠注册手机"}</parame>
+		<linked></linked>
+		<checkPoint></checkPoint>
+	</case6>
+	
+	<case7 name="H5中金获取绑卡验证码">
+		<url>trustAccount/send-bind-short-message</url>
+		<parame>{"device":"H5","name":"信贷入单客户名称","idCard":"信贷入单客户证件号","phoneNumber":"华夏普惠注册手机","bankCode":"B005","bankNumber":"621226120201710","province":"上海","city":"上海","subBranchName":"中国工商银行上海市梅陇支行"}</parame>
+		<linked>txSNBinding=$.body.txSNBinding</linked>
+		<checkPoint></checkPoint>
+	</case7>
+
+	<case8 name="H5中金绑定银行卡">
+		<url>trustAccount/bind-account</url>
+		<parame>{"device":"H5","txSNBinding":"${txSNBinding}","smsValidationCode":"123456"}</parame>
+		<linked></linked>
+		<checkPoint></checkPoint>
+	</case8>
+
+</parames>

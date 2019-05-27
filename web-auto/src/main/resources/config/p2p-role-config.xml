@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<config>
+	<!-- SIT 环境 环境 登录地址和登录用户 -->
+	<sit>
+				
+		<creditsys_lj>	      <!--   信		贷		系		统    -->                   
+			<ploan_url name="信贷系统地址">http://192.168.11.84:8084/logon.html</ploan_url>
+			<shenqing>MALONG</shenqing>
+			<fuhe>SHENJIE</fuhe>
+			<chushen>WANGMINRONG2</chushen>
+			<zhongshen>WANGMINRONG5</zhongshen>
+			<qianyue-phone name="电话预约">MALONG</qianyue-phone>
+			<qianyue-store name="门店签约">CUIYU</qianyue-store>
+			<hetongshenhe name="合同审核">CHENJIN</hetongshenhe>
+		</creditsys_lj>
+		
+		<creditsys>	   <!--      信		贷		系		统                       -->
+			<ploan_url name="信贷系统地址">http://192.168.11.84:8084/logon.html</ploan_url>
+			<shenqing>WANGCAIXIA</shenqing>
+			<fuhe>YANGDENGLOU</fuhe>
+			<chushen>WANGMINRONG2</chushen>
+			<zhongshen>WANGMINRONG5</zhongshen>
+			<qianyue-phone name="电话预约">WANGCAIXIA</qianyue-phone>
+			<qianyue-store name="门店签约">YANGDENGLOU</qianyue-store>
+			<hetongshenhe name="合同审核">CHENJIN</hetongshenhe>
+		</creditsys>
+	
+	</sit>
+	
+	<sit2>
+		<creditsys>	<!--      信		贷		系		统                       -->
+			<ploan_url name="信贷系统地址">http://192.168.15.99:8084</ploan_url>
+			<shenqing>MALONG</shenqing>
+			<fuhe>SHENJIE</fuhe>
+			<chushen>WANGMINRONG2</chushen>
+			<zhongshen>WANGMINRONG5</zhongshen>
+			<qianyue-phone name="电话预约门店签约">MALONG</qianyue-phone>
+			<qianyue-store name="门店签约">YANGDENGLOU</qianyue-store>
+			<hetongshenhe name="合同审核">CHENJIN</hetongshenhe>
+		</creditsys>
+	</sit2>
+	
+	
+	<!-- UAT2 环境登录地址和登录用户-->
+	<uat2>
+		<creditsys>		<!--      信   	贷		系		统                       -->
+			<ploan_url name="信贷系统地址">http://192.168.11.206:8084/logon.html</ploan_url>
+			<shenqing>WANGCAIXIA</shenqing>
+			<fuhe>HEXIAOFENG</fuhe>
+			<chushen>ZHANGMINGLI</chushen>
+			<zhongshen>HUANGQI</zhongshen>
+			<qianyue-phone name="电话预约">WANGCAIXIA</qianyue-phone>
+			<qianyue-store name="门店签约">HEXIAOFENG</qianyue-store>
+			<hetongshenhe name="合同审核">CHENJIN</hetongshenhe>
+		</creditsys>
+		
+	</uat2>
+
+</config>

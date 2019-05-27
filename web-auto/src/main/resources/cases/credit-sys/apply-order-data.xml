@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<parames>
+
+	<case1 name ="新增贷款申请">
+		<testData>{"login":{"url":"ploan_url","loginRole":"shenqing"},"data":{"loan_money":"50000"}}</testData>
+		<checkPoint>{"wintitle_ch":"信贷核心子系统"}</checkPoint>
+	</case1>
+	
+	<case2 name ="复核">
+		<testData>{"login":{"url":"ploan_url","loginRole":"fuhe"}}</testData>
+		<checkPoint>{"wintitle_ch":"信贷核心子系统","saveSucess":"保存成功","wintitle_submit":"提交动作选择列表"}</checkPoint>
+	</case2>
+	
+	<case3 name ="初审">
+		<testData>{"login":{"url":"ploan_url","loginRole":"chushen"},"data":{"monthlyIncome":"20000"}}</testData>
+		<checkPoint>{"wintitle_ch":"信贷核心子系统","wintitle_submit":"提交动作选择列表"}</checkPoint>
+	</case3>
+	<case3 name ="初审提交">
+		<testData>{"login":{"url":"ploan_url","loginRole":"chushen"}}</testData>
+		<checkPoint>{"wintitle_ch":"信贷核心子系统","wintitle_submit":"提交动作选择列表"}</checkPoint>
+	</case3>
+	
+	<case4 name ="终审">
+		<testData>{"login":{"url":"ploan_url","loginRole":"zhongshen"}}</testData>
+		<checkPoint>{"wintitle_ch":"信贷核心子系统","wintitle_submit":"提交动作选择列表"}</checkPoint>
+	</case4>
+	<case4 name ="终审提交">
+		<testData>{"login":{"url":"ploan_url","loginRole":"zhongshen"}}</testData>
+		<checkPoint>{"wintitle_ch":"信贷核心子系统","wintitle_submit":"提交动作选择列表"}</checkPoint>
+	</case4>
+	
+	<case5 name ="电话预约">
+		<testData>{"login":{"url":"ploan_url","loginRole":"qianyue-phone"}}</testData>
+		<checkPoint>{"wintitle_ch":"信贷核心子系统","wintitle_submit":"提交动作选择列表"}</checkPoint>
+	</case5>
+	
+	<case6 name ="门店签约">
+		<testData>{"login":{"url":"ploan_url","loginRole":"qianyue-store"},"data":{"loadFilePath":"\\load-file\\callList.xlsx"}}</testData>
+		<checkPoint>{"wintitle_ch":"信贷核心子系统","bankVerify":"开始进行放款卡号校验！","bankVerifyPass":"放款卡号校验通过！","pageText":"请上传文件！","contractGenerate":"合同WORD生成完成!"}</checkPoint>
+	</case6>
+	
+	<case7 name ="门店签约提交">
+		<testData>{"login":{"url":"ploan_url","loginRole":"qianyue-store"}}</testData>
+		<checkPoint>{"wintitle_submit":"提交动作选择列表"}</checkPoint>
+	</case7>
+	
+	<case8 name ="合同提交审核">
+		<testData>{"login":{"url":"ploan_url","loginRole":"hetongshenhe"}}</testData>
+		<checkPoint>{"wintitle_ch":"信贷核心子系统","wintitle_submit":"提交动作选择列表"}</checkPoint>
+	</case8>
+	
+	<case9 name ="申请详情">
+		<testData>{"login":{"url":"ploan_url","loginRole":"shenqing"},"data":{"phone_time":"16","liveSDate":"1999/11/11","fromCityDate":"1999/11/11","monthlyIncome":"20000"}}</testData>
+		<checkPoint>{"wintitle_ch":"信贷核心子系统","saveSucess":"保存成功","wintitle_submit":"提交动作选择列表"}</checkPoint>
+	</case9>
+	
+	<case10 name ="初审回退补件">
+		<testData>{"login":{"url":"ploan_url","loginRole":"chushen"}}</testData>
+		<checkPoint>{"wintitle_ch":"信贷核心子系统","wintitle_submit":"提交动作选择列表"}</checkPoint>
+	</case10>
+	
+	<case11 name ="初审回退补件提交">
+		<testData>{"login":{"url":"ploan_url","loginRole":"shenqing"}}</testData>
+		<checkPoint>{"wintitle_ch":"信贷核心子系统","wintitle_submit":"提交动作选择列表","saveSucess":"保存成功"}</checkPoint>
+	</case11>
+	
+	<case12 name ="取消贷款申请">
+		<testData>{"login":{"url":"ploan_url","loginRole":"shenqing"}}</testData>
+		<checkPoint>{"wintitle_submit":"提交动作选择列表"}</checkPoint>
+	</case12>
+	
+	<case13 name ="信托计划匹配">
+		<testData>{"login":{"url":"ploan_url","loginRole":"hetongshenhe"}}</testData>
+		<checkPoint>{"wintitle_ch":"信贷核心子系统","wintitle_submit":"提交动作选择列表"}</checkPoint>
+	</case13>
+
+
+</parames>

@@ -1,0 +1,241 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.web</groupId>
+	<artifactId>web-auto</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+  <dependencies>
+		
+		 <dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>druid</artifactId>
+		    <version>1.0.26</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>fastjson</artifactId>
+		    <version>1.2.7</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.jayway.jsonpath</groupId>
+		    <artifactId>json-path</artifactId>
+		    <version>2.2.0</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    <version>3.0</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>commons-codec</groupId>
+		    <artifactId>commons-codec</artifactId>
+		    <version>1.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.53.0</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.testng</groupId>
+		    <artifactId>testng</artifactId>
+		    <version>6.14.3</version>
+		</dependency>
+		
+		<!-- ssh远程服务jar -->
+		 <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.54</version>
+        </dependency>
+		
+		<!-- excel读写操作的jar -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.14</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>dom4j</groupId>
+		    <artifactId>dom4j</artifactId>
+		    <version>1.6.1</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>jaxen</groupId>
+		    <artifactId>jaxen</artifactId>
+		    <version>1.1.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>commons-lang</groupId>
+		    <artifactId>commons-lang</artifactId>
+		    <version>2.3</version>
+		</dependency>
+		
+	 	<dependency>
+		    <groupId>net.sf.saxon</groupId>
+		    <artifactId>saxon</artifactId>
+		    <version>8.7</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+		<!--redis连接需要的jar  -->
+		<dependency>
+		    <groupId>redis.clients</groupId>
+		    <artifactId>jedis</artifactId>
+		    <version>2.9.0</version>
+		</dependency>
+		<!--redis连接池需要的jar  -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-pool2</artifactId>
+		    <version>2.4.2</version>
+		</dependency>
+	
+<!--<dependency>-->
+		<!--<groupId>cn.hj</groupId>-->
+		<!--<artifactId>hxph</artifactId>-->
+		<!--<version>0.0.1-SNAPSHOT</version>-->
+        <!--</dependency>-->
+	
+		<dependency>
+		    <groupId>commons-beanutils</groupId>
+		    <artifactId>commons-beanutils</artifactId>
+		    <version>1.9.3</version>
+		</dependency>
+	
+	<!-- reportng报告需要的3个jar包 -->
+<!--<dependency>-->
+			<!--<groupId>org.uncommons</groupId>-->
+			<!--<artifactId>reportng</artifactId>-->
+			<!--<version>1.1.5</version>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+			<!--<groupId>org.apache.velocity</groupId>-->
+			<!--<artifactId>velocity</artifactId>-->
+			<!--<version>1.4</version>-->
+		<!--</dependency>-->
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+	
+  </dependencies>
+  
+  <build>
+	   <resources>
+	     <resource>
+	       <directory>${basedir}/src/main/resources</directory>
+	       <includes>
+	         <include>**/*.properties</include>
+	         <include>**/*.xml</include>
+	         <include>**/*.png</include>
+	         <include>**/*.exe</include>
+	       </includes>
+	     </resource>
+	   </resources>
+	   
+	   
+  		<plugins>
+		    <plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-compiler-plugin</artifactId>
+		        <configuration>
+		            <source>1.8</source>
+		            <target>1.8</target>
+		            <encoding>UTF-8</encoding>
+		        </configuration>
+		    </plugin>
+		    
+		    <plugin>  
+		   	    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-resources-plugin</artifactId>  
+			    <version>2.5</version>
+			    <executions>  
+			          <execution>  
+			              <phase>compile</phase>  
+			          </execution>
+		      	</executions>  
+			    <configuration>    
+			        <encoding>UTF-8</encoding>    
+			    </configuration>  
+			</plugin>
+		    
+		    <plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<phase>test</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>cn.web.main.ExcuteMain</mainClass>
+				</configuration>
+			</plugin>
+			
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.0</version>
+				<configuration>
+<!-- 					<suiteXmlFiles>
+						<suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+					</suiteXmlFiles> -->
+					<properties>
+						<property>
+							<name>usedefaultlisteners</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>listener</name>
+							<value>org.uncommons.reportng.HTMLReporter,org.uncommons.reportng.JUnitXMLReporter</value>
+						</property>
+					</properties>
+
+					<reportsDirectory>reportng-output/</reportsDirectory>
+					<workingDirectory>target/</workingDirectory>
+
+				</configuration>
+			</plugin>
+			
+			
+		</plugins>
+		
+  </build>
+
+
+
+</project>

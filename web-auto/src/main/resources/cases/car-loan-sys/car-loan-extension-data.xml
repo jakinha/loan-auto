@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<parames>
+
+	<case1 name="根据订单号搜索">
+		<testData>{"financingSum":"50000"}</testData>
+		<checkPoint></checkPoint>
+	</case1>
+	<case1 name="根据姓名搜索">
+		<testData>{"financingSum":"50000"}</testData>
+		<checkPoint></checkPoint>
+	</case1>
+	<case1 name="根据身份证搜索">
+		<testData>{"financingSum":"50000"}</testData>
+		<checkPoint></checkPoint>
+	</case1>
+	<case1 name="根据订单号搜索-不存在">
+		<testData>{"orderNum":"H000000000000","financingSum":"50000"}</testData>
+		<checkPoint></checkPoint>
+	</case1>
+	<case1 name="根据姓名搜索-不存在">
+		<testData>{"client_name":"哈哈哈","financingSum":"50000"}</testData>
+		<checkPoint></checkPoint>
+	</case1>
+	<case1 name="根据身份证搜索-不存在">
+		<testData>{"id_card":"340123199511220463","financingSum":"50000"}</testData>
+		<checkPoint></checkPoint>
+	</case1>
+
+	<case2 name ="展期申请">
+		<testData>{"financingSum":"50000","applyExtensionRemark":"申请展期的备注咯"}</testData>
+		<checkPoint></checkPoint>
+	</case2>
+	
+</parames>

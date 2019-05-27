@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+ <project name= "WEB" basedir= "." default="transform">
+
+	<property name= "lib.dir" value= "lib" />
+
+ 	<path id= "test.classpath" >
+ 		
+ 		<fileset dir= "${basedir}\testng-xslt\lib" includes= "*.jar" />
+ 		</path>
+
+ 	 	<target name= "transform" >
+
+ 	 		<xslt in= "${basedir}/test-output/testng-results.xml" 
+ 				style= "${basedir}/test-output/testng-results.xsl" 
+ 				out= "${basedir}/test-output/index1.html" > 
+ 				<param name= "testNgXslt.outputDir" expression= "${basedir}/test-output" />
+ 				<classpath refid= "test.classpath" />
+ 			</xslt>
+  	 
+ 		</target>
+
+</project>

@@ -1,0 +1,11 @@
+.metadata
+.settings
+.idea
+.svn
+logs
+test-output
+target
+.claspath
+.project
+
+/target/
